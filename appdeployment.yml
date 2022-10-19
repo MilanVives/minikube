@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikubedeployment
+spec:
+  selector:
+    matchLabels:
+      app: minikubeapp
+  replicas: 3 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: minikubeapp
+    spec:
+      containers:
+      - name: minikubeapp
+        image: dimilan/minikubeapp:2.0
+        ports:
+        - containerPort: 80
