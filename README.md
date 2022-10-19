@@ -1,12 +1,13 @@
 ### Deployment file toepassen
+```
 kubectl apply -f appdelpoyment.yml
-
+```
 ### Service
-
+```
 type: NodePort 
 ....
 nodePort: 31500 (moet tussen 30000 en 32767 zijn)
-
+```
 ### Service toepassen (selector moeyt identiek zijn aan selector van de pods zie deployment file)
 kubectl apply -f appservice.yml
 
